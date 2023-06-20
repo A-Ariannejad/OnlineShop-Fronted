@@ -10,13 +10,13 @@ class SignUpView extends Component {
       data: []
     };
   }
-
   componentDidMount() {
     fetch('https://api.example.com/data')
       .then(response => response.json())
       .then(data => this.setState({ data }));
   }
   onSubmit = async (values) => {
+    console.log("login")
     alert(JSON.stringify(values));
   };
   render() {
@@ -42,6 +42,7 @@ class SignUpView extends Component {
           <div className="col-md-6 p-3">
             <h4 className="text-center">Sign Up</h4>
             <SingUpForm onSubmit={this.onSubmit} />
+            {/* <button className="btn btn-primary" onClick={this.onSubmit}>Hello</button> */}
           </div>
         </div>
       </div>
